@@ -1,7 +1,7 @@
-package com.crud.crud_spring_mvc.service;
+package com.crud.crud_spring_mvc.StudentAuthorisationProgram.service;
 
-import com.crud.crud_spring_mvc.model.Student;
-import com.crud.crud_spring_mvc.repository.StudentRepository;
+import com.crud.crud_spring_mvc.StudentAuthorisationProgram.model.Student;
+import com.crud.crud_spring_mvc.StudentAuthorisationProgram.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,15 +11,14 @@ import java.util.Optional;
 
 /**
  * @author Tatevik Mirzoyan
- * Created on 13-Nov-20
+ * Created on 18-Nov-20
  */
 @Service
 public class StudentService {
-
     @Autowired
     private StudentRepository studentRepository;
 
-    public Student getById(int id) {
+    public Student getStudentById(int id) {
         Optional<Student> optional = studentRepository.findById(id);
         return optional.orElse(null);
     }

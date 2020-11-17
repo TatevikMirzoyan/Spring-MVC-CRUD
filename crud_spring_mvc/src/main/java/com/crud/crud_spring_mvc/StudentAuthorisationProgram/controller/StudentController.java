@@ -1,7 +1,6 @@
-package com.crud.crud_spring_mvc.controller;
-
-import com.crud.crud_spring_mvc.model.Student;
-import com.crud.crud_spring_mvc.service.StudentService;
+package com.crud.crud_spring_mvc.StudentAuthorisationProgram.controller;
+import com.crud.crud_spring_mvc.StudentAuthorisationProgram.service.StudentService;
+import com.crud.crud_spring_mvc.StudentAuthorisationProgram.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +28,7 @@ public class StudentController {
 
     @GetMapping(path = "/get/{id}")
     public String getStudentById(Model model, @PathVariable int id) {
-        Student student = studentService.getById(id);
+        Student student = studentService.getStudentById(id);
         model.addAttribute("student", student);
         if (student == null) {
             return "redirect:/students/list";

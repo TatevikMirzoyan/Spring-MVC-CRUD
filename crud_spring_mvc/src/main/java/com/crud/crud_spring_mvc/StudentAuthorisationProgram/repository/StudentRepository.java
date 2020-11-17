@@ -1,6 +1,6 @@
-package com.crud.crud_spring_mvc.repository;
+package com.crud.crud_spring_mvc.StudentAuthorisationProgram.repository;
 
-import com.crud.crud_spring_mvc.model.Student;
+import com.crud.crud_spring_mvc.StudentAuthorisationProgram.model.Student;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
