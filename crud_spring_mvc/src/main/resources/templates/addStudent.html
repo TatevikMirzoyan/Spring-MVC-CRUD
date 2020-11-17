@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Student</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Create a Student:</h1>
+<form th:action="@{/students/add}"
+      th:object="${student}" method="POST">
+    First Name:
+    <input type="text" th:field="*{firstName}" />
+    <br/>
+    Last Name:
+    <input type="text" th:field="*{lastName}" />
+    <br/>
+     Age:
+    <input type="text" th:field="*{age}" />
+    <br/>
+    <input type="submit" value="Create" />
+
+    <!-- Check if errorMessage is not null and not empty -->
+
+    <div th:if="${errorMessage}" th:utext="${errorMessage}"
+         style="color:red;font-style:italic;">
+        ...
+    </div>
+</form>
+
+<br/>
+
+</body>
+</html>

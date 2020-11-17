@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Student info</title>
+</head>
+<body>
+<h1>Student information</h1>
+<div>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td th:utext="${student.getId()}">...</td>
+            <td th:utext="${student.getFirstName()}">...</td>
+            <td th:utext="${student.getLastName()}">...</td>
+            <td th:utext="${student.getAge()}">...</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
