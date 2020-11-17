@@ -75,6 +75,7 @@ public class StudentController {
         return "deleteStudent";
     }
 
+
     //TODO
     @DeleteMapping(path = "/delete/{id}")
     public String deleteStudentById(@PathVariable int id, Model model) {
