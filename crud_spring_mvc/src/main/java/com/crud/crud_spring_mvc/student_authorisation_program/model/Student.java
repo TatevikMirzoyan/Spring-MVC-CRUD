@@ -1,4 +1,4 @@
-package com.crud.crud_spring_mvc.StudentAuthorisationProgram.model;
+package com.crud.crud_spring_mvc.student_authorisation_program.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

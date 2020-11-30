@@ -1,4 +1,4 @@
-package com.crud.crud_spring_mvc.airportManagementSystem.model;
+package com.crud.crud_spring_mvc.airport_management_system.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

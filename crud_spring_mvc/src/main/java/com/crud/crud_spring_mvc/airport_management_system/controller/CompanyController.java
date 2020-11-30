@@ -1,7 +1,7 @@
-package com.crud.crud_spring_mvc.airportManagementSystem.controller;
+package com.crud.crud_spring_mvc.airport_management_system.controller;
 
-import com.crud.crud_spring_mvc.airportManagementSystem.model.Company;
-import com.crud.crud_spring_mvc.airportManagementSystem.service.CompanyImpl;
+import com.crud.crud_spring_mvc.airport_management_system.model.Company;
+import com.crud.crud_spring_mvc.airport_management_system.dao_impl.CompanyImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

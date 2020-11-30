@@ -1,4 +1,4 @@
-package com.crud.crud_spring_mvc.airportManagementSystem.controller;
+package com.crud.crud_spring_mvc.airport_management_system.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.RestController;
  * Created on 18-Nov-20
  */
 @RestController
-public class PassengerController {
+public class TripController {
 }

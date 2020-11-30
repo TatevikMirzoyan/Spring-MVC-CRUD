@@ -1,8 +1,7 @@
-package com.crud.crud_spring_mvc.airportManagementSystem.repository;
+package com.crud.crud_spring_mvc.airport_management_system.dao;
 
 
-import com.crud.crud_spring_mvc.airportManagementSystem.model.Trip;
-import org.springframework.stereotype.Repository;
+import com.crud.crud_spring_mvc.airport_management_system.model.Trip;
 
 import java.util.List;
 import java.util.Set;
@@ -11,7 +10,6 @@ import java.util.Set;
  * @author Tatevik Mirzoyan
  * Created on 17-Sep-20
  */
-@Repository
 public interface TripDAO {
     Trip getById(int id);
 

@@ -1,9 +1,11 @@
-package com.crud.crud_spring_mvc.airportManagementSystem.service;
+package com.crud.crud_spring_mvc.airport_management_system.dao_impl;
 
 
-import com.crud.crud_spring_mvc.airportManagementSystem.repository.CompanyDAO;
-import com.crud.crud_spring_mvc.airportManagementSystem.model.Company;
+import com.crud.crud_spring_mvc.airport_management_system.dao.CompanyDAO;
+import com.crud.crud_spring_mvc.airport_management_system.model.Company;
+import com.crud.crud_spring_mvc.airport_management_system.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -18,13 +20,11 @@ import java.util.Set;
  * @author Tatevik Mirzoyan
  * Created on 25-Sep-20
  */
-@Service
-public class CompanyImpl {
+@Component
+public class CompanyImpl implements CompanyDAO{
     EntityManagerFactory entityManagerFactory =
             Persistence.createEntityManagerFactory("Hibernate_JPA");
     EntityManager entityManager = entityManagerFactory.createEntityManager();
-    @Autowired
-    private CompanyDAO companyDAO;
 
     public Company getById(int id) {
         Company company = entityManager.find(Company.class, id);

@@ -1,8 +1,8 @@
-package com.crud.crud_spring_mvc.airportManagementSystem.service;
+package com.crud.crud_spring_mvc.airport_management_system.dao_impl;
 
 
-import com.crud.crud_spring_mvc.airportManagementSystem.repository.TripDAO;
-import com.crud.crud_spring_mvc.airportManagementSystem.model.Trip;
+import com.crud.crud_spring_mvc.airport_management_system.dao.TripDAO;
+import com.crud.crud_spring_mvc.airport_management_system.model.Trip;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;

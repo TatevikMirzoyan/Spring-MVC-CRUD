@@ -1,6 +1,6 @@
-package com.crud.crud_spring_mvc.StudentAuthorisationProgram.controller;
-import com.crud.crud_spring_mvc.StudentAuthorisationProgram.service.StudentService;
-import com.crud.crud_spring_mvc.StudentAuthorisationProgram.model.Student;
+package com.crud.crud_spring_mvc.student_authorisation_program.controller;
+import com.crud.crud_spring_mvc.student_authorisation_program.service.StudentService;
+import com.crud.crud_spring_mvc.student_authorisation_program.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
