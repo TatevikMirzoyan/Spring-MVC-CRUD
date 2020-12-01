@@ -1,4 +1,5 @@
 package com.crud.crud_spring_mvc.student_authorisation_program.controller;
+
 import com.crud.crud_spring_mvc.student_authorisation_program.service.StudentService;
 import com.crud.crud_spring_mvc.student_authorisation_program.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,13 +68,11 @@ public class StudentController {
         return "addStudent";
     }
 
-
     //TODO did not working
     @GetMapping(path = "deleteStudent")
     public String deletingStudent(Model model) {
         return "deleteStudent";
     }
-
 
     //TODO
     @DeleteMapping(path = "/delete/{id}")
