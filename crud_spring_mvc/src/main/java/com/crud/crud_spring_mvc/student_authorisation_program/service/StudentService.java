@@ -42,4 +42,9 @@ public class StudentService {
         }
         return students;
     }
+
+    public void updateStudent(int id, Student student) {
+        student.setId(id);
+        studentRepository.save(student);
+    }
 }

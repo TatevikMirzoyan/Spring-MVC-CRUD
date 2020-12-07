@@ -6,25 +6,28 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
-<h1>Student List</h1>
-<a href="/students/addStudent">Add Student</a>
-<a href="/students/deleteStudent">Delete Student</a>
+<h1 th:align="center">Student List</h1>
 <br/><br/>
 <div>
-    <table border="1">
+    <table th:align="center" border="2">
         <tr>
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Age</th>
+            <th>Actions</th>
+
         </tr>
         <tr th:each ="student : ${students}">
             <td th:utext="${student.getId()}">...</td>
             <td th:utext="${student.getFirstName()}">...</td>
             <td th:utext="${student.getLastName()}">...</td>
             <td th:utext="${student.getAge()}">...</td>
+            <td><a th:href="@{/students/edit/{id}(id=${student.getId()})}">Edit</a>
+                <a th:href="@{/students/delete/{id}(id=${student.getId()})}">Delete</a></td>
         </tr>
     </table>
+    <a href="/students/addStudent" align="center">Add Student</a>
 </div>
 </body>
 </html>

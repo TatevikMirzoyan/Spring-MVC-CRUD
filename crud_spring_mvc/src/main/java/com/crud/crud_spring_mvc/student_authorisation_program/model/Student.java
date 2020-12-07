@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.*;
 
 /**
  * @author Tatevik Mirzoyan
@@ -21,8 +22,14 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotBlank(message = "FirstName cannot be empty")
+    @Pattern(regexp = "[A-Z][a-z]*",message = "The first name must start with Uppercase")
     private String firstName;
+    @NotBlank(message = "FirstName cannot be empty")
     private String lastName;
+    @NotNull(message = "Age cannot be null")
+    @Min(value = 16, message = "Age must be greater than 16")
+    @Max(value = 40, message = "Age must be less than 40")
     private int age;
 
     public Student(String firstName, String lastName, int age) {

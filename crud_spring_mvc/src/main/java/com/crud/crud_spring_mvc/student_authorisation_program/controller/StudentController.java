@@ -5,8 +5,10 @@ import com.crud.crud_spring_mvc.student_authorisation_program.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -45,41 +47,43 @@ public class StudentController {
     }
 
     @GetMapping(path = "addStudent")
-    public String addingStudent(Model model, Student student) {
+    public String getAddStudentForm(Model model, Student student) {
         model.addAttribute("student", student);
         return "addStudent";
     }
 
     @PostMapping(path = "/add")
-    public String addStudent(Student student, Model model) {
-        studentService.addStudent(student);
-        model.addAttribute("student", student);
-
-        String firstName = student.getFirstName();
-        String lastName = student.getLastName();
-        Integer age = student.getAge();
-
-        if (firstName != null && firstName.length() > 0
-                && lastName != null && lastName.length() > 0) {
-            return "redirect:/students/list";
+    public String addStudent(@Valid Student student, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            model.addAttribute("student", student);
+            return "addStudent";
         }
-        String errorMessage = "First Name and Last Name are required";
-        model.addAttribute("errorMessage", errorMessage);
-        return "addStudent";
+        studentService.addStudent(student);
+        return "redirect:/students/list";
     }
 
-    //TODO did not working
-    @GetMapping(path = "deleteStudent")
-    public String deletingStudent(Model model) {
-        return "deleteStudent";
-    }
-
-    //TODO
-    @DeleteMapping(path = "/delete/{id}")
-    public String deleteStudentById(@PathVariable int id, Model model) {
+    @GetMapping(path = "/delete/{id}")
+    public String deleteStudent(@PathVariable int id, Model model) {
         model.addAttribute("id", id);
         studentService.deleteStudentById(id);
         return "redirect:/students/list";
+    }
+
+    @GetMapping(path = "/edit/{id}")
+    public String getUpdateStudentForm(@PathVariable int id, Model model) {
+        Student student = studentService.getStudentById(id);
+        model.addAttribute("student", student);
+        return "update_student";
+    }
+
+    @PostMapping(path = "/update/{id}")
+    public String updateStudent(@PathVariable int id, @Valid Student student, BindingResult result) {
+        if (result.hasErrors()) {
+            return "update_student";
+        }
+        studentService.updateStudent(id, student);
+        return "redirect:/students/list";
+
     }
 
 }
