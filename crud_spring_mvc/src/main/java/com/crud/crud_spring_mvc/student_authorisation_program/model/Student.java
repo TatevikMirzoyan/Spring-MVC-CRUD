@@ -1,6 +1,5 @@
 package com.crud.crud_spring_mvc.student_authorisation_program.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,7 +14,6 @@ import javax.validation.constraints.*;
  * Created on 13-Nov-20
  */
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class Student {
@@ -23,9 +21,8 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotBlank(message = "FirstName cannot be empty")
-    @Pattern(regexp = "[A-Z][a-z]*",message = "The first name must start with Uppercase")
     private String firstName;
-    @NotBlank(message = "FirstName cannot be empty")
+    @NotBlank(message = "LastName cannot be empty")
     private String lastName;
     @NotNull(message = "Age cannot be null")
     @Min(value = 16, message = "Age must be greater than 16")

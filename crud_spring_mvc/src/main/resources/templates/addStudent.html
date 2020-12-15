@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
-<h1 align="center">Create a Student:</h1>
+<h1>Create a Student:</h1>
 <form th:action="@{/students/add}"
       th:object="${student}" method="POST">
     <label for="firstName">FirstName</label>
@@ -14,14 +14,14 @@
     <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
     <br/>
     <label for="lastName">LastName</label>
-    <input type="text" th:field="*{lastName}" id="lastName" placeholder="LastName">
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="lastName">
     <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
     <br/>
     <label for="age">Age</label>
     <input type="number" th:field="*{age}" id="age" placeholder="Age">
     <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
     <br/>
-    <input align="center" type="submit" value="Create"/>
+    <input type="submit" value="Create"/>
 </form>
 <br/>
 </body>

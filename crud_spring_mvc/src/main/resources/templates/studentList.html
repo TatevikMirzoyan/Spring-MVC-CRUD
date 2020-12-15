@@ -6,10 +6,10 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
-<h1 th:align="center">Student List</h1>
+<h1 >Student List</h1>
 <br/><br/>
 <div>
-    <table th:align="center" border="2">
+    <table border="2">
         <tr>
             <th>ID</th>
             <th>First Name</th>
@@ -27,7 +27,7 @@
                 <a th:href="@{/students/delete/{id}(id=${student.getId()})}">Delete</a></td>
         </tr>
     </table>
-    <a href="/students/addStudent" align="center">Add Student</a>
+    <a href="/students/addStudent" >Add Student</a>
 </div>
 </body>
 </html>
